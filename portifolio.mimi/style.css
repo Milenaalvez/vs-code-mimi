@@ -1,153 +1,171 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+/* Reset e fonte */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
+html { scroll-behavior:smooth; }
+
+body {
+  background:#f4f4f9;
+  color:#333;
+  transition:0.3s;
 }
 
-body{
-background:#f4f4f4;
-color:#333;
-transition:0.3s;
+/* Cabeçalho */
+header {
+  background:linear-gradient(135deg,#4a00e0,#8e2de2);
+  color:white;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
+.header-content {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:20px;
 }
 
-header{
-background:linear-gradient(135deg,#1f1f1f,#3a3a3a);
-color:white;
+.profile img {
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff;
 }
 
-.header-content{
-display:flex;
-align-items:center;
-gap:20px;
-padding:20px;
+/* Navegação */
+nav {
+  background:#3a3a3a;
 }
 
-.profile img{
-width:120px;
-height:120px;
-border-radius:50%;
-object-fit:cover;
+nav ul {
+  display:flex;
+  justify-content:center;
+  list-style:none;
 }
 
-nav{
-background:#222;
+nav li { margin:10px; }
+
+nav a {
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  transition:color 0.3s;
 }
 
-nav ul{
-display:flex;
-justify-content:center;
-list-style:none;
+nav a:hover { color:#ffcc00; }
+
+/* Seções */
+section {
+  background:white;
+  margin:30px auto;
+  padding:30px;
+  border-radius:10px;
+  max-width:1000px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-nav li{
-margin:10px;
+h2 { 
+  margin-bottom:20px; 
+  color:#4a00e0; 
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
+/* Cards */
+.card {
+  background:#f9f9f9;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-nav a:hover{
-color:#4CAF50;
+/* Recomendações */
+.comentario {
+  background:#ececff;
+  padding:20px;
+  border-left:5px solid #4a00e0;
+  margin-bottom:20px;
+  border-radius:8px;
+  color:#333;
+  font-style:italic;
+  transition:0.3s;
 }
 
-section{
-background:white;
-margin:30px auto;
-padding:30px;
-border-radius:10px;
-max-width:1000px;
+/* Modo escuro para recomendações */
+.dark .comentario {
+  background:#2a2a3a;
+  border-left:5px solid #8e2de2;
+  color:#f4f4f9;
 }
 
-h2{
-margin-bottom:20px;
+/* Habilidades */
+.skill { margin-bottom:20px; }
+
+.bar {
+  background:#ddd;
+  height:12px;
+  border-radius:10px;
+  overflow:hidden;
 }
 
-.card{
-background:#f9f9f9;
-padding:20px;
-border-radius:10px;
-margin-bottom:20px;
-}
-
-.skill{
-margin-bottom:20px;
-}
-
-.bar{
-background:#ddd;
-height:12px;
-border-radius:10px;
-overflow:hidden;
-}
-
-.progress{
-height:12px;
-width:0;
-background:#4CAF50;
-border-radius:10px;
-transition:width 1.5s ease;
+.progress {
+  height:12px;
+  width:0;
+  background:#4a00e0;
+  border-radius:10px;
+  transition:width 1.5s ease;
 }
 
 .progress.html.show{width:85%}
 .progress.css.show{width:80%}
-.progress.js.show{width:60%}
-.progress.sql.show{width:40%}
+.progress.js.show{width:70%}
+.progress.sql.show{width:50%}
 
-#toggle-dark{
-margin-left:auto;
-padding:10px 15px;
-border:none;
-border-radius:8px;
-cursor:pointer;
+/* Botões */
+#toggle-dark {
+  margin-left:auto;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#fff;
+  color:#4a00e0;
+  font-weight:bold;
 }
 
-#topBtn{
-position:fixed;
-bottom:30px;
-right:30px;
-padding:10px 15px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-size:18px;
+#topBtn {
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:18px;
+  background:#4a00e0;
+  color:white;
+  display:none;
 }
 
-.hidden{
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s;
+/* Animações */
+.hidden {
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s;
 }
 
-.show{
-opacity:1;
-transform:translateY(0);
+.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
-/* DARK MODE */
-
-.dark{
-background:#121212;
-color:white;
-}
-
-.dark section{
-background:#1e1e1e;
-}
-
-.dark .card{
-background:#2a2a2a;
-}
+/* Dark Mode geral */
+.dark { background:#121212; color:white; }
+.dark section { background:#1e1e1e; }
+.dark .card { background:#2a2a2a; }
+.dark nav { background:#1f1f1f; }
+.dark h2 { color:#8e2de2; }
+.dark #toggle-dark { background:#333; color:#fff; }
+.dark #topBtn { background:#8e2de2; }
